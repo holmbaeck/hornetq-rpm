@@ -1,5 +1,9 @@
-export JETTY_HOME=
-export RUN_AS_USER=hornetq
+export HORNETQ_USER=hornetq
 export PIDDIR=/var/run/hornetq
-export BIN=$HORNETQ_HOME/bin/hornetq
+export HORNETQ_HOME="/usr/share/java/hornetq/"
+export HORNETQ_HOST="localhost"
+export HORNETQ_DATA=/var/lib/hornetq
+export HORNETQ_CONFIG="$HORNETQ_HOME/config/stand-alone/non-clustered"
+export HORNETQ_SERVER_LOG=/var/log/hornetq/server.log
+export HORNETQ_PID=/var/run/hornetq/hornetq.pid
 

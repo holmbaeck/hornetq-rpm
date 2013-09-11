@@ -41,7 +41,7 @@ rm -rf %{buildroot}
 %pre
 getent group %{hornetqgroup} >/dev/null || groupadd -r %{hornetqgroup}
 getent passwd %{hornetquser} >/dev/null || \
-useradd -r -g %{hornetqgroup} -d %{_javadir}/%{name} -s /sbin/nologin \
+useradd -r -g %{hornetqgroup} -d %{_javadir}/%{name} -s /bin/bash \
     -c "HornetQ user" %{hornetquser} || :
 
 %post
@@ -60,10 +60,7 @@ cp -a docs/  %{buildroot}/usr/share/doc/%{name}-%{version}/
 cp -a licenses/  %{buildroot}/usr/share/doc/%{name}-%{version}/licenses/
 install -m 755 -d %{buildroot}/%{_javadir}/%{name}/
 cp -a schema lib/ bin/ %{buildroot}/%{_javadir}/%{name}/
-#rm $(find %{buildroot}/%{_javadir}/%{name}/ | egrep "solaris|macosx|linux-ia-64|linux-ppc-64|hpux-parisc|freebsd")
 install -m 755 -d %{buildroot}/var/lib/%{name}
-#install -m 755 -d %{buildroot}/var/lib/%{name}/work
-#cp -a apps/ conf/ %{buildroot}/var/lib/%{name}
 install -m 755 -d %{buildroot}/%{_initddir}
 install -m 755 -d %{buildroot}/etc/sysconfig/
 install -m 755 -d %{buildroot}/var/log/%{name}/
@@ -77,7 +74,6 @@ ln -s /var/lib/%{name} %{buildroot}%{_javadir}/%{name}/data
 ln -s /etc/%{name} %{buildroot}%{_javadir}/%{name}/config
 ln -s /var/log/%{name}/     %{buildroot}%{_javadir}/%{name}/logs
 ln -s /var/log/%{name}/     %{buildroot}%{_javadir}/%{name}/bin/logs
-#ln -s /var/lib/%{name}/work %{buildroot}%{_javadir}/%{name}/.hornetq
 
 %clean
 rm -rf %{buildroot}
