@@ -1,0 +1,5 @@
+export JETTY_HOME=
+export RUN_AS_USER=hornetq
+export PIDDIR=/var/run/hornetq
+export BIN=$HORNETQ_HOME/bin/hornetq
+
