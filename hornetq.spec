@@ -2,7 +2,7 @@
 %define hornetqgroup hornetq
 
 Name:		hornetq
-Version:	2.3.0.Final
+Version:	2.4.0.Final
 Release:	1%{?dist}
 Summary:	HornetQ is an open source project to build a multi-protocol, embeddable, very high performance, clustered, asynchronous messaging system.
 Packager:	Ernest Beinrohr <Ernest.Beinrohr@axonpro.sk>
@@ -10,7 +10,7 @@ Packager:	Ernest Beinrohr <Ernest.Beinrohr@axonpro.sk>
 Group:		Java
 License:	Apache
 URL:		http://www.hornetqsoft.org/
-Source0:	http://dist.codehaus.org/hornetq/distributions/%{name}-%{version}-bin.tar.gz
+Source0:	http://downloads.jboss.org/hornetq/%{name}-%{version}-bin.tar.gz
 Source1:	hornetq-init-script
 Source2:	hornetq-sysconfig
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
